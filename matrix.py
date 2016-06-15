@@ -12,8 +12,9 @@ class Matrix:
 
     def _create_matrix(self):
         ''' Create a blank matrix '''
-        row = [self.get_blank_char()] * self.width
-        self._matrix = [row] * self.height
+        self._matrix = []
+        for _ in range(0, self.height):
+            self._matrix.append(['O'] * self.width)
 
     def get_blank_char(self):
         ''' Return blank char '''
@@ -53,3 +54,21 @@ class Matrix:
 
         for y in range(y1, y2+1):
             self._matrix[y][x] = color
+
+    def hfind(self, y, color):
+        ''' find a color horizontally in the matrix '''
+        results = []
+        for x in range(0, self.width):
+            if color == self._matrix[y][x]:
+                results.append(x)
+
+        return results
+
+    def vfind(self, x, color):
+        ''' find a color vertically in the matrix '''
+        results = []
+        for y in range(0, self.height):
+            if color == self._matrix[y][x]:
+                results.append(y)
+
+        return results
