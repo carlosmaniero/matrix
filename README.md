@@ -37,15 +37,15 @@ Put the color C vertically in `(X, Y1-Y2)`.
 
     H X1 X2 Y C
 
-Put the color C vertically in `(X1-X2, Y)`.
+Put the color C horizontally in `(X1-X2, Y)`.
 
     K X1 Y1 X2 Y2 C
 
-Put the color C vertically in (X1-X2, Y1-Y2).
+Create a rect in (X1-X2, Y1-Y2) with the C color.
 
     F X Y C
 
-Fill (pending).
+Fill a line vertically and horizontally if exists two points in the same direction.
 
     S name
 
