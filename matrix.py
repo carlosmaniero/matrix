@@ -89,3 +89,11 @@ class Matrix:
         else:
             self.vcolorize(x, y1, y2, color)
             self.hcolorize(y, x1, x2, color)
+
+    def __str__(self):
+        rows = []
+
+        for row in self:
+            rows.append(''.join(row))
+
+        return '\n'.join(rows)
