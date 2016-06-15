@@ -90,6 +90,11 @@ class Matrix:
             self.vcolorize(x, y1, y2, color)
             self.hcolorize(y, x1, x2, color)
 
+    def rect(self, x1, y1, x2, y2, color):
+        ''' fill a rect in matrix '''
+        for y in range(y1, y2 + 1):
+            self.hcolorize(y, x1, x2, color)
+
     def __str__(self):
         rows = []
 
