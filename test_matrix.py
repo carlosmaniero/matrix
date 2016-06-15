@@ -133,7 +133,7 @@ def test_matrix_save():
     m, n = 2, 2
     matrix = Matrix(m, n)
     matrix.colorize(0, 1, 'X')
-    matrix.save()
+    matrix.save('/tmp/matrix.bmp')
 
     with open('/tmp/matrix.bmp') as f:
         assert str(matrix) == f.read()
