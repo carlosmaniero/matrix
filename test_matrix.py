@@ -85,9 +85,9 @@ def test_matrix_hfind():
     matrix.colorize(0, 2, 'X')
     matrix.colorize(1, 2, 'X')
 
-    assert 0 in matrix.vfind(0, 'X')
-    assert 2 in matrix.vfind(0, 'X')
-    assert 2 in matrix.vfind(1, 'X')
+    assert 0 in matrix.hfind(0, 'X')
+    assert 2 in matrix.hfind(0, 'X')
+    assert 2 in matrix.hfind(1, 'X')
 
 
 def test_matrix_vfind():
