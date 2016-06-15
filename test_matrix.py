@@ -126,4 +126,4 @@ def test_matrix_str():
     matrix = Matrix(m, n)
     matrix.colorize(0, 1, 'X')
 
-    assert str(matrix) == '0X\nOO'
+    assert str(matrix) == 'OX\nOO'
