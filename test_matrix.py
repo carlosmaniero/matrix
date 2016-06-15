@@ -33,3 +33,45 @@ def test_matrix_clear():
     for row in matrix:
         for col in row:
             assert col == Matrix.blank_char
+
+
+def test_matrix_vcolorize():
+    m, n = 3, 3
+    matrix = Matrix(m, n)
+
+    matrix.vcolorize(1, 1, 2, 'X')
+
+    assert matrix[1][1] == 'X'
+    assert matrix[1][2] == 'X'
+
+    matrix.vcolorize(2, 0, 1, 'X')
+
+    assert matrix[2][0] == 'X'
+    assert matrix[2][1] == 'X'
+
+    matrix.vcolorize(0, 0, 2, 'X')
+
+    assert matrix[0][0] == 'X'
+    assert matrix[0][1] == 'X'
+    assert matrix[0][2] == 'X'
+
+
+def test_matrix_hcolorize():
+    m, n = 3, 3
+    matrix = Matrix(m, n)
+
+    matrix.hcolorize(1, 1, 2, 'X')
+
+    assert matrix[1][1] == 'X'
+    assert matrix[2][1] == 'X'
+
+    matrix.hcolorize(2, 0, 1, 'X')
+
+    assert matrix[0][2] == 'X'
+    assert matrix[1][2] == 'X'
+
+    matrix.hcolorize(0, 0, 2, 'X')
+
+    assert matrix[0][0] == 'X'
+    assert matrix[1][0] == 'X'
+    assert matrix[2][0] == 'X'
