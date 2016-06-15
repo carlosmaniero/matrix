@@ -10,6 +10,12 @@ class MatrixParser:
     def clean(self):
         self.matrix.clean()
 
+    def colorize(self, x, y, color):
+        # Humanaze
+        x, y = int(x), int(y)
+        x, y = x - 1, y - 1
+        self.matrix.colorize(x, y, color)
+
     def parse(self, command):
         command, *args = command.split()
         method = self._REGISTER.get(command)
@@ -19,5 +25,6 @@ class MatrixParser:
 
     _REGISTER = {
         'I': init,
-        'C': clean
+        'C': clean,
+        'L': colorize
     }
