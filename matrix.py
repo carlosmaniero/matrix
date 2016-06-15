@@ -97,3 +97,8 @@ class Matrix:
             rows.append(''.join(row))
 
         return '\n'.join(rows)
+
+    def save(self, name):
+        ''' Save matrix in the file '''
+        with open(name, 'w+') as f:
+            f.write(str(self))
