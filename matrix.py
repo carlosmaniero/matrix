@@ -72,3 +72,20 @@ class Matrix:
                 results.append(y)
 
         return results
+
+    def fill(self, x, y, color):
+        ''' Fill matrix colors if points exists'''
+        x_indexs = self.vfind(x, color)
+        y_indexs = self.hfind(y, color)
+
+        try:
+            x1 = min(x_indexs)
+            x2 = max(x_indexs)
+
+            y1 = min(y_indexs)
+            y2 = max(y_indexs)
+        except ValueError:
+            pass
+        else:
+            self.vcolorize(x, y1, y2, color)
+            self.hcolorize(y, x1, x2, color)
