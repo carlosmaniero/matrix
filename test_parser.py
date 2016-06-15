@@ -50,6 +50,15 @@ def test_parse_fill(parser):
     assert parser.matrix[1][1] == 'X'
 
 
+def test_parse_rect(parser):
+    parser.parse('K 1 1 2 2 X')
+
+    assert parser.matrix[0][0] == 'X'
+    assert parser.matrix[0][1] == 'X'
+    assert parser.matrix[1][0] == 'X'
+    assert parser.matrix[1][1] == 'X'
+
+
 def test_parse_save(parser):
     parser.parse('S /tmp/matrix.bmp')
     with open('/tmp/matrix.bmp') as f:
