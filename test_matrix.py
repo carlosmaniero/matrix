@@ -127,3 +127,13 @@ def test_matrix_str():
     matrix.colorize(0, 1, 'X')
 
     assert str(matrix) == 'OX\nOO'
+
+
+def test_matrix_save():
+    m, n = 2, 2
+    matrix = Matrix(m, n)
+    matrix.colorize(0, 1, 'X')
+    matrix.save()
+
+    with open('/tmp/matrix.bmp') as f:
+        assert str(matrix) == f.read()
