@@ -16,6 +16,11 @@ class MatrixParser:
         x, y = x - 1, y - 1
         self.matrix.colorize(x, y, color)
 
+    def vcolorize(self, x, y1, y2, color):
+        x, y1, y2 = int(x), int(y1), int(y2)
+        x, y1, y2 = x - 1, y1 - 1, y2 - 1
+        self.matrix.vcolorize(x, y1, y2, color)
+
     def parse(self, command):
         command, *args = command.split()
         method = self._REGISTER.get(command)
@@ -26,5 +31,6 @@ class MatrixParser:
     _REGISTER = {
         'I': init,
         'C': clean,
-        'L': colorize
+        'L': colorize,
+        'V': vcolorize
     }
