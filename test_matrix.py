@@ -121,6 +121,17 @@ def test_matrix_fill():
         matrix[i][2] == 'X'
 
 
+def test_matrix_rect():
+    m, n = 5, 5
+    matrix = Matrix(m, n)
+
+    matrix.rect(0, 0, 1, 1, 'X')
+
+    assert matrix[0][0] == 'X'
+    assert matrix[0][1] == 'X'
+    assert matrix[1][0] == 'X'
+    assert matrix[1][1] == 'X'
+
 def test_matrix_str():
     m, n = 2, 2
     matrix = Matrix(m, n)
