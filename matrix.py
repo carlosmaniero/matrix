@@ -34,3 +34,22 @@ class Matrix:
     def clean(self):
         ''' reset matrix '''
         self._create_matrix()
+
+    def hcolorize(self, y, x1, x2, color):
+        ''' Put the color C horizontally in (X1-X2, Y). '''
+        if x1 > x2:
+            x1, x2 = x2, x1
+
+        # inclusive x2
+        x2 += 1
+
+        # using slices (self.__getitem__) to fill matrix
+        self[y][x1:x2] = [color] * (x2 - x1)
+
+    def vcolorize(self, x, y1, y2, color):
+        ''' Put the color C vertically in (X1-X2, Y). '''
+        if y1 > y2:
+            y1, y2 = y2, y1
+
+        for y in range(y1, y2+1):
+            self._matrix[y][x] = color
