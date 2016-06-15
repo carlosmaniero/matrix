@@ -26,3 +26,11 @@ class Matrix:
     def __len__(self):
         ''' Matrix suports len '''
         return len(self._matrix)
+
+    def colorize(self, x, y, color):
+        ''' colorize a pixel '''
+        self._matrix[x][y] = color
+
+    def clean(self):
+        ''' reset matrix '''
+        self._create_matrix()
