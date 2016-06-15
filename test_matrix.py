@@ -101,3 +101,21 @@ def test_matrix_vfind():
     assert 0 in matrix.vfind(0, 'X')
     assert 0 in matrix.vfind(2, 'X')
     assert 1 in matrix.vfind(2, 'X')
+
+
+def test_matrix_fill():
+    m, n = 5, 5
+    matrix = Matrix(m, n)
+
+    matrix.colorize(2, 0, 'X')
+    matrix.colorize(2, 4, 'X')
+
+    matrix.colorize(0, 2, 'X')
+    matrix.colorize(4, 2, 'X')
+
+    matrix.fill(2, 2, 'X')
+
+    assert ['X'] * 5 == matrix[2]
+
+    for i in range(0, 5):
+        matrix[i][2] == 'X'
