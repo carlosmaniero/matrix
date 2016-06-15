@@ -6,6 +6,7 @@ from matrix_parser import MatrixParser
 def parser():
     p = MatrixParser()
     p.parse('I 2 2')
+    return p
 
 
 def test_parse_init():

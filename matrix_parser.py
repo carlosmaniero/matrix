@@ -7,6 +7,9 @@ class MatrixParser:
         m, n = int(m), int(n)
         self.matrix = Matrix(m, n)
 
+    def clean(self):
+        self.matrix.clean()
+
     def parse(self, command):
         command, *args = command.split()
         method = self._REGISTER.get(command)
@@ -15,5 +18,6 @@ class MatrixParser:
             method(self, *args)
 
     _REGISTER = {
-        'I': init
+        'I': init,
+        'C': clean
     }
