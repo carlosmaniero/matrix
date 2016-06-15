@@ -119,3 +119,11 @@ def test_matrix_fill():
 
     for i in range(0, 5):
         matrix[i][2] == 'X'
+
+
+def test_matrix_str():
+    m, n = 2, 2
+    matrix = Matrix(m, n)
+    matrix.colorize(0, 1, 'X')
+
+    assert str(matrix) == '0X\nOO'
