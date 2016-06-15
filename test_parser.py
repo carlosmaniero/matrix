@@ -1,9 +1,9 @@
 import pytest
+from matrix_parser import MatrixParser
 
 
 @pytest.fixture
 def parser():
-    from matrix_parser import MatrixParser
     p = MatrixParser()
     p.parse('I 2 2')
 
@@ -11,7 +11,7 @@ def parser():
 def test_parse_init():
     parser = MatrixParser()
     parser.parse('I 2 2')
-    assert parser.matrix.wisth == 2
+    assert parser.matrix.width == 2
     assert parser.matrix.height == 2
 
 
@@ -29,13 +29,13 @@ def test_parse_colorize(parser):
 def test_parse_vcolorize(parser):
     parser.parse('V 1 1 2 X')
     assert parser.matrix[0][0] == 'X'
-    assert parser.matrix[0][1] == 'X'
+    assert parser.matrix[1][0] == 'X'
 
 
 def test_parse_hcolorize(parser):
     parser.parse('H 1 2 1 X')
     assert parser.matrix[0][0] == 'X'
-    assert parser.matrix[1][0] == 'X'
+    assert parser.matrix[0][1] == 'X'
 
 
 def test_parse_fill(parser):
