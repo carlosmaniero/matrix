@@ -75,3 +75,29 @@ def test_matrix_vcolorize():
     assert matrix[0][0] == 'X'
     assert matrix[1][0] == 'X'
     assert matrix[2][0] == 'X'
+
+
+def test_matrix_hfind():
+    m, n = 3, 3
+    matrix = Matrix(m, n)
+
+    matrix.colorize(0, 0, 'X')
+    matrix.colorize(0, 2, 'X')
+    matrix.colorize(1, 3, 'X')
+
+    assert 0 in matrix.vfind(0, 'X')
+    assert 2 in matrix.vfind(0, 'X')
+    assert 3 in matrix.vfind(1, 'X')
+
+
+def test_matrix_vfind():
+    m, n = 3, 3
+    matrix = Matrix(m, n)
+
+    matrix.colorize(0, 0, 'X')
+    matrix.colorize(2, 0, 'X')
+    matrix.colorize(3, 1, 'X')
+
+    assert 0 in matrix.vfind(0, 'X')
+    assert 0 in matrix.vfind(2, 'X')
+    assert 1 in matrix.vfind(3, 'X')
