@@ -96,7 +96,7 @@ def test_matrix_vfind():
 
     matrix.colorize(0, 0, 'X')
     matrix.colorize(2, 0, 'X')
-    matrix.colorize(3, 1, 'X')
+    matrix.colorize(2, 1, 'X')
 
     assert 0 in matrix.vfind(0, 'X')
     assert 0 in matrix.vfind(2, 'X')
