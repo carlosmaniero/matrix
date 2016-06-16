@@ -37,6 +37,11 @@ class MatrixParser:
 
         self.matrix.rect(x1, y1, x2, y2, color)
 
+    def replace(self, x, y, color):
+        x, y = int(x), int(y)
+        x, y = x - 1, y - 1
+        self.matrix.replace(x, y, color)
+
     def save(self, name):
         self.matrix.save(name)
 
@@ -53,7 +58,8 @@ class MatrixParser:
         'L': colorize,
         'V': vcolorize,
         'H': hcolorize,
-        'F': fill,
+        'Q': fill,
+        'F': replace,
         'K': rect,
         'S': save
     }
