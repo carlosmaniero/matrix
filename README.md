@@ -12,6 +12,12 @@ To running tests execute the follow command:
 
     $ py.test
 
+## Debugging
+
+To show the output after any command, run this on your console:
+
+    $ export DEBUG_MATRIX=1
+
 ## Running the application
 To run the application execute:
 
