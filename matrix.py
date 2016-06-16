@@ -95,13 +95,12 @@ class Matrix:
         for y in range(y1, y2 + 1):
             self.hcolorize(y, x1, x2, color)
 
-    def replace(self, x, y, color, old_color=None, mapped=[]):
-        if (x, y) in mapped:
+    def replace(self, x, y, color, old_color=None, mapped=None):
+        mapped = []
+        if x < 0 or y < 0 or (x, y) in mapped:
             return
         mapped.append((x, y))
 
-        if x < 0 or y < 0:
-            return
         try:
             current_color = self[x][y]
         except IndexError:
