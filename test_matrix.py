@@ -132,6 +132,20 @@ def test_matrix_rect():
     assert matrix[1][0] == 'X'
     assert matrix[1][1] == 'X'
 
+
+def test_matrix_replace():
+    m, n = 2, 2
+    matrix = Matrix(m, n)
+
+    matrix.colorize(0, 1, 'X')
+    matrix.replace(0, 0, 'C')
+
+    assert matrix[0][0] == 'C'
+    assert matrix[0][1] == 'X'
+    assert matrix[1][0] == 'C'
+    assert matrix[1][1] == 'C'
+
+
 def test_matrix_str():
     m, n = 2, 2
     matrix = Matrix(m, n)
