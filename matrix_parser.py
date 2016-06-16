@@ -21,7 +21,7 @@ class MatrixParser:
         x, y1, y2 = x - 1, y1 - 1, y2 - 1
         self.matrix.vcolorize(x, y1, y2, color)
 
-    def hcolorize(self, y, x1, x2, color):
+    def hcolorize(self, x1, x2, y, color):
         y, x1, x2 = int(y), int(x1), int(x2)
         y, x1, x2 = y - 1, x1 - 1, x2 - 1
         self.matrix.hcolorize(y, x1, x2, color)
