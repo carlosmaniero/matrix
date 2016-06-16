@@ -30,7 +30,7 @@ class Matrix:
 
     def colorize(self, x, y, color):
         ''' colorize a pixel '''
-        self._matrix[x][y] = color
+        self._matrix[y][x] = color
 
     def clean(self):
         ''' reset matrix '''

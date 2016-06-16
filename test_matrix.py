@@ -86,8 +86,8 @@ def test_matrix_hfind():
     matrix.colorize(1, 2, 'X')
 
     assert 0 in matrix.hfind(0, 'X')
-    assert 2 in matrix.hfind(0, 'X')
-    assert 2 in matrix.hfind(1, 'X')
+    assert 0 in matrix.hfind(2, 'X')
+    assert 1 in matrix.hfind(2, 'X')
 
 
 def test_matrix_vfind():
@@ -99,8 +99,8 @@ def test_matrix_vfind():
     matrix.colorize(1, 2, 'X')
 
     assert 0 in matrix.vfind(0, 'X')
-    assert 0 in matrix.vfind(2, 'X')
-    assert 1 in matrix.vfind(2, 'X')
+    assert 2 in matrix.vfind(0, 'X')
+    assert 2 in matrix.vfind(1, 'X')
 
 
 def test_matrix_fill():
@@ -141,8 +141,8 @@ def test_matrix_replace():
     matrix.replace(0, 0, 'C')
 
     assert matrix[0][0] == 'C'
-    assert matrix[0][1] == 'X'
-    assert matrix[1][0] == 'C'
+    assert matrix[0][1] == 'C'
+    assert matrix[1][0] == 'X'
     assert matrix[1][1] == 'C'
 
 
@@ -151,7 +151,7 @@ def test_matrix_str():
     matrix = Matrix(m, n)
     matrix.colorize(0, 1, 'X')
 
-    assert str(matrix) == 'OX\nOO'
+    assert str(matrix) == 'OO\nXO'
 
 
 def test_matrix_save():

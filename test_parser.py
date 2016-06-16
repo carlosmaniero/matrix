@@ -55,8 +55,8 @@ def test_parse_replace(parser):
     parser.parse('F 1 1 C')
 
     assert parser.matrix[0][0] == 'C'
-    assert parser.matrix[0][1] == 'X'
-    assert parser.matrix[1][0] == 'C'
+    assert parser.matrix[0][1] == 'C'
+    assert parser.matrix[1][0] == 'X'
     assert parser.matrix[1][1] == 'C'
 
 
