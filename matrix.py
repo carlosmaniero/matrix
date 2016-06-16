@@ -95,6 +95,14 @@ class Matrix:
         for y in range(y1, y2 + 1):
             self.hcolorize(y, x1, x2, color)
 
+    def replace(self, x, y, color):
+        old_color = self[x][y]
+
+        for x, row in enumerate(self):
+            for y, col in enumerate(row):
+                if col == old_color:
+                    self[x][y] = color
+
     def __str__(self):
         rows = []
 

@@ -46,8 +46,18 @@ def test_parse_fill(parser):
     parser.parse('L 2 3 X')
     parser.parse('L 1 2 X')
     parser.parse('L 3 2 X')
-    parser.parse('F 2 2 X')
+    parser.parse('Q 2 2 X')
     assert parser.matrix[1][1] == 'X'
+
+
+def test_parse_replace(parser):
+    parser.parse('L 1 2 X')
+    parser.parse('F 1 1 C')
+
+    assert parser.matrix[0][0] == 'C'
+    assert parser.matrix[0][1] == 'X'
+    assert parser.matrix[1][0] == 'C'
+    assert parser.matrix[1][1] == 'C'
 
 
 def test_parse_rect(parser):
